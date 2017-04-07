@@ -6,10 +6,12 @@ describe('Record store tests', function(){
 
   var recordStore;
   var record;
+  var record2;
 
   beforeEach(function(){
     recordStore = new RecordStore("Zavvi", "Edinburgh");
     record = new Record("Iggy Pop", "Lust For Life", "Rock", 1000);
+    record2 = new Record("Iggy Pop", "The Passenger", "Rock", 1000);
   })
 
   it('Should have a name', function(){
@@ -36,6 +38,13 @@ describe('Record store tests', function(){
   it('Can list its inventory', function(){
     recordStore.addRecord(record);
     var expected = "Artist: Iggy Pop Title: Lust For Life Genre: Rock Price: 1000"
+    assert.strictEqual(expected, recordStore.listInventory())
+  })
+
+  it('Can list its inventory with multiple records', function(){
+    recordStore.addRecord(record);
+    recordStore.addRecord(record2);
+    var expected = "Artist: Iggy Pop Title: Lust For Life Genre: Rock Price: 1000Artist: Iggy Pop Title: The Passenger Genre: Rock Price: 1000"
     assert.strictEqual(expected, recordStore.listInventory())
   })
 
