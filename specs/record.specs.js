@@ -13,4 +13,8 @@ describe('Records', function(){
     assert.strictEqual("Iggy Pop", record.artist);
   })
 
+  it('Should have a title', function(){
+    assert.strictEqual("Lust For Life", record.title)
+  })
+
 })
