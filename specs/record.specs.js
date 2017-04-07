@@ -17,4 +17,8 @@ describe('Records', function(){
     assert.strictEqual("Lust For Life", record.title)
   })
 
+  it('Should have a genre', function(){
+    assert.strictEqual("Rock", record.genre)
+  })
+
 })
