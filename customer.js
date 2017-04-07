@@ -29,6 +29,19 @@ Customer.prototype = {
       }
     })
     return totalValue;
+  },
+
+  mostExpensive: function(){
+    var listOfPrices = [];
+    this.collection.forEach(function(element){
+      listOfPrices.push(element.price);
+    })
+    var highestPrice = 0;
+    var highest = function(array){
+      return Math.max.apply(null, array);
+    }
+    highestPrice = highest(listOfPrices);
+    return highestPrice;
   }
 
 }

@@ -8,12 +8,14 @@ describe('Customer tests', function(){
   var record;
   var record2;
   var record3;
+  var record4;
 
   beforeEach(function(){
     customer = new Customer("Bob", 1000);
     record = new Record("Iggy Pop", "Lust For Life", "Rock", 1000);
     record2 = new Record("Iggy Pop", "The Passenger", "Rock", 1000);
     record3 = new Record("Joanna Newsom", "Have One On Me", "Folk", 1000);
+    record4 = new Record("The Beatles", "Best of...", "Rock", 500);
   })
 
   it('Can have a balance', function(){
@@ -49,6 +51,13 @@ describe('Customer tests', function(){
     customer.buyRecord(record2);
     customer.buyRecord(record3);
     assert.strictEqual(2000, customer.genreValue("Rock"));
+  })
+
+  it('Can view value of most expensive record', function(){
+    customer = new Customer("Bob", 10000);
+    customer.buyRecord(record);
+    customer.buyRecord(record4);
+    assert.strictEqual(1000, customer.mostExpensive());
   })
 
 })
