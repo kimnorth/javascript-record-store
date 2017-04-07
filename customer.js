@@ -17,9 +17,18 @@ Customer.prototype = {
     var totalValue = 0;
     this.collection.forEach(function(record){
       totalValue += record.price;
-      console.log(record)
     })
     return totalValue;    
+  },
+
+  genreValue: function(genre){
+    var totalValue = 0;
+    this.collection.forEach(function(record){
+      if (genre === record.genre){
+        totalValue += record.price;
+      }
+    })
+    return totalValue;
   }
 
 }

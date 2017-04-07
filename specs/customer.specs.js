@@ -7,11 +7,13 @@ describe('Customer tests', function(){
   var customer;
   var record;
   var record2;
+  var record3;
 
   beforeEach(function(){
     customer = new Customer("Bob", 1000);
     record = new Record("Iggy Pop", "Lust For Life", "Rock", 1000);
     record2 = new Record("Iggy Pop", "The Passenger", "Rock", 1000);
+    record3 = new Record("Joanna Newsom", "Have One On Me", "Folk", 1000);
   })
 
   it('Can have a balance', function(){
@@ -39,6 +41,14 @@ describe('Customer tests', function(){
     customer.buyRecord(record);
     customer.buyRecord(record2);
     assert.strictEqual(2000, customer.collectionValue());
+  })
+
+  it('Can view value of all records by genre', function(){
+    customer = new Customer("Bob", 10000);
+    customer.buyRecord(record);
+    customer.buyRecord(record2);
+    customer.buyRecord(record3);
+    assert.strictEqual(2000, customer.genreValue("Rock"));
   })
 
 })
