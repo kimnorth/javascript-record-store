@@ -21,4 +21,8 @@ describe('Records', function(){
     assert.strictEqual("Rock", record.genre)
   })
 
+  it('Should have a price', function(){
+    assert.strictEqual(1000, record.price);
+  })
+
 })
