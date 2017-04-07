@@ -19,6 +19,15 @@ RecordStore.prototype = {
       answer = answer + (record.printProperties())  
     })
     return answer;
+  },
+
+  sellRecord: function(record){
+    this.inventory.forEach(function(item, index, array){
+      if(item === record){
+        array.splice(index, 1);
+        // this.balance += item.price;
+      }
+    })
   }
 
 }
