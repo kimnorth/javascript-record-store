@@ -25,4 +25,8 @@ describe('Records', function(){
     assert.strictEqual(1000, record.price);
   })
 
+  it('Can print its properties', function(){
+    assert.strictEqual("Artist: Iggy Pop Title: Lust For Life Genre: Rock Price: 1000", record.printProperties())
+  })
+
 })
