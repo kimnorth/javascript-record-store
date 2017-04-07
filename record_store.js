@@ -30,6 +30,24 @@ RecordStore.prototype = {
       }
     })
     this.balance += sale;
+  },
+
+  financialReport: function(record){
+    var stockValue = 0;
+    this.inventory.forEach(function(item, index, array){
+      stockValue += item.price;
+    })
+    return "Balance: " + this.balance + " Stock Value: " + stockValue; 
+  },
+
+  findByGenre: function(genre){
+    var searchResults = "";
+    this.inventory.forEach(function(item){
+      if(item.genre === genre){
+        searchResults += item.printProperties();
+      }
+    })
+    return searchResults;
   }
 
 }
