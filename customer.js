@@ -9,6 +9,7 @@ Customer.prototype = {
   buyRecord: function(record){
     if (record.price <= this.balance){
     this.collection.push(record);
+    this.balance -= record.price;
     }
   },
 

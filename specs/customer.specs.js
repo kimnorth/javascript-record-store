@@ -21,4 +21,9 @@ describe('Customer tests', function(){
     assert.strictEqual(1, customer.collection.length);
   })
 
+  it('Buying records reduced customer balance', function(){
+    customer.buyRecord(record);
+    assert.strictEqual(0, customer.balance);
+  })
+
 })
