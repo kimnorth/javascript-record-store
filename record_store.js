@@ -16,7 +16,7 @@ RecordStore.prototype = {
   listInventory: function(){
     var answer = "";
     this.inventory.forEach(function(record){
-      answer = answer + record.printProperties()  
+      answer = answer + (record.printProperties())  
     })
     return answer;
   }
