@@ -16,4 +16,8 @@ describe('Record store tests', function(){
     assert.strictEqual("Zavvi", recordStore.name)
   })
 
+  it('Should have a location', function(){
+    assert.strictEqual("Edinburgh", recordStore.location)
+  })
+
 })
