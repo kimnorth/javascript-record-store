@@ -24,4 +24,8 @@ describe('Record store tests', function(){
     assert.strictEqual(0, recordStore.inventory.length)
   })
 
+  it('Should have a balance', function(){
+    assert.strictEqual(0, recordStore.balance)
+  })
+
 })
