@@ -6,10 +6,12 @@ describe('Customer tests', function(){
 
   var customer;
   var record;
+  var record2;
 
   beforeEach(function(){
     customer = new Customer("Bob", 1000);
-    record = new Record("Iggy Pop", "Iggy Pop", "Rock", 1000);
+    record = new Record("Iggy Pop", "Lust For Life", "Rock", 1000);
+    record2 = new Record("Iggy Pop", "The Passenger", "Rock", 1000);
   })
 
   it('Can have a balance', function(){
@@ -30,6 +32,13 @@ describe('Customer tests', function(){
     customer = new Customer("Bob", 500);
     customer.buyRecord(record);
     assert.strictEqual(0, customer.collection.length);
+  })
+
+  it('Can view the value of their entire collection', function(){
+    customer = new Customer("Bob", 10000);
+    customer.buyRecord(record);
+    customer.buyRecord(record2);
+    assert.strictEqual(2000, customer.collectionValue());
   })
 
 })
