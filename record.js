@@ -8,7 +8,9 @@ var Record = function(artist, title, genre, price){
 Record.prototype = {
 
   printProperties: function(){
-    return "Artist: " + this.artist + " Title: " + this.title + " Genre: " + this.genre + " Price: " + this.price
+    result = "";
+    result = "Artist: " + this.artist + " Title: " + this.title + " Genre: " + this.genre + " Price: " + this.price;
+    return result;
   }
 
 }

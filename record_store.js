@@ -11,6 +11,14 @@ RecordStore.prototype = {
 
   addRecord: function(record){
     this.inventory.push(record);
+  },
+
+  listInventory: function(){
+    var answer = "";
+    this.inventory.forEach(function(record){
+      answer = answer + record.printProperties()  
+    })
+    return answer;
   }
 
 }

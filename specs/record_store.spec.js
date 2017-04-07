@@ -33,4 +33,10 @@ describe('Record store tests', function(){
     assert.strictEqual(1, recordStore.inventory.length)
   })
 
+  it('Can list its inventory', function(){
+    recordStore.addRecord(record);
+    var expected = "Artist: Iggy Pop Title: Lust For Life Genre: Rock Price: 1000"
+    assert.strictEqual(expected, recordStore.listInventory())
+  })
+
 })
