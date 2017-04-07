@@ -7,4 +7,12 @@ var RecordStore = function(name, location){
 
 }
 
+RecordStore.prototype = {
+
+  addRecord: function(record){
+    this.inventory.push(record);
+  }
+
+}
+
 module.exports = RecordStore;

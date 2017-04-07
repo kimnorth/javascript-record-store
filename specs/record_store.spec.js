@@ -28,4 +28,9 @@ describe('Record store tests', function(){
     assert.strictEqual(0, recordStore.balance)
   })
 
+  it('Can add records to its inventory', function(){
+    recordStore.addRecord(record);
+    assert.strictEqual(1, recordStore.inventory.length)
+  })
+
 })
