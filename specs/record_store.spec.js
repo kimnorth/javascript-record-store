@@ -48,12 +48,19 @@ describe('Record store tests', function(){
     assert.strictEqual(expected, recordStore.listInventory())
   })
 
-  it('Can remove a record from inventory by selling.', function(){
+  it('Can remove a record from inventory by selling', function(){
     recordStore.addRecord(record);
     recordStore.sellRecord(record);
     // var expected = 0;
     // assert.strictEqual(expected, recordStore.inventory.length)
     assert.strictEqual(0, recordStore.inventory.length)
   })
+
+  it('Can sell a record and add to store\'s balance', function(){
+    recordStore.addRecord(record);
+    recordStore.sellRecord(record);
+    assert.strictEqual(1000, recordStore.balance);
+  })
+
 
 })

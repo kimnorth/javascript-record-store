@@ -22,12 +22,14 @@ RecordStore.prototype = {
   },
 
   sellRecord: function(record){
+    var sale = 0;
     this.inventory.forEach(function(item, index, array){
       if(item === record){
         array.splice(index, 1);
-        // this.balance += item.price;
+        sale = record.price;
       }
     })
+    this.balance += sale;
   }
 
 }
