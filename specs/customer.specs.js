@@ -26,4 +26,10 @@ describe('Customer tests', function(){
     assert.strictEqual(0, customer.balance);
   })
 
+  it('Can\'t buy records without enough money', function(){
+    customer = new Customer("Bob", 500);
+    customer.buyRecord(record);
+    assert.strictEqual(0, customer.collection.length);
+  })
+
 })
