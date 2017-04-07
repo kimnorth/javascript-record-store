@@ -5,8 +5,4 @@ var Record = function(artist, title, genre, price){
   this.price = price;
 }
 
-
-
-
-
 module.exports = Record;
