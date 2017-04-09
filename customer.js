@@ -49,6 +49,18 @@ Customer.prototype = {
     this.collection.sort(function(a, b){
       return a.price - b.price
     });
+  },
+
+  compareCollection: function(customer){
+    var highestCustomer;
+
+    if ( this.collectionValue() < customer.collectionValue() ){
+      highestCustomer = customer.name;      
+    }
+    else {
+      highestCustomer = this.name;  
+    }
+    return highestCustomer + " has the highest value collection."
 
   }
 

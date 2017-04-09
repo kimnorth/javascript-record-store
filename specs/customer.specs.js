@@ -71,4 +71,13 @@ describe('Customer tests', function(){
     assert.deepEqual(expected, customer.collection);
   })
 
+  it('Can compare the value of record collection with another customer', function(){
+    customer = new Customer("Bob", 10000);
+    customer2 = new Customer("Steve", 10000);
+    customer.buyRecord(record); // total 1000
+    customer2.buyRecord(record2);
+    customer2.buyRecord(record3); // total 1900
+    assert.strictEqual("Steve has the highest value collection.", customer.compareCollection(customer2))
+  })
+
 })
