@@ -14,7 +14,7 @@ describe('Customer tests', function(){
     customer = new Customer("Bob", 1000);
     record = new Record("Iggy Pop", "Lust For Life", "Rock", 1000);
     record2 = new Record("Iggy Pop", "The Passenger", "Rock", 1000);
-    record3 = new Record("Joanna Newsom", "Have One On Me", "Folk", 1000);
+    record3 = new Record("Joanna Newsom", "Have One On Me", "Folk", 900);
     record4 = new Record("The Beatles", "Best of...", "Rock", 500);
   })
 
@@ -58,6 +58,17 @@ describe('Customer tests', function(){
     customer.buyRecord(record);
     customer.buyRecord(record4);
     assert.strictEqual(1000, customer.mostExpensive());
+  })
+
+  it('Can sort record collection by value', function(){
+    customer = new Customer("Bob", 10000);
+    customer.buyRecord(record);
+    customer.buyRecord(record4);
+    console.log(customer.collection);
+    customer.sortCollection();
+    console.log(customer.collection);
+    var expected = [record4, record]
+    assert.deepEqual(expected, customer.collection);
   })
 
 })

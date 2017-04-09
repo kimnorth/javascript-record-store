@@ -42,6 +42,14 @@ Customer.prototype = {
     }
     highestPrice = highest(listOfPrices);
     return highestPrice;
+  },
+
+  sortCollection: function(){
+
+    this.collection.sort(function(a, b){
+      return a.price - b.price
+    });
+
   }
 
 }
